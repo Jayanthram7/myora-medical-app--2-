@@ -175,7 +175,7 @@ export default function SignupPage() {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  placeholder="Dr. Jane Smith"
+                  placeholder="Enter your Name"
                   className="w-full px-4 py-3 rounded-lg border border-border bg-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                 />
               </div>
