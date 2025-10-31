@@ -99,7 +99,7 @@ export default function LandingPage() {
               {/* Trust Indicators */}
               <div className="flex items-center gap-8 pt-8 border-t border-gray-200">
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">500+</div>
+                  <div className="text-3xl font-bold text-gray-900">50+</div>
                   <p className="text-sm text-gray-600">Cardiologists</p>
                 </div>
                 <div>
@@ -107,7 +107,7 @@ export default function LandingPage() {
                   <p className="text-sm text-gray-600">Accuracy Rate</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">2M+</div>
+                  <div className="text-3xl font-bold text-gray-900">200+</div>
                   <p className="text-sm text-gray-600">Records Processed</p>
                 </div>
               </div>

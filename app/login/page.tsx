@@ -5,7 +5,8 @@ import Image from "next/image"
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
+import { toast } from "@/hooks/use-toast"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -30,8 +31,20 @@ export default function LoginPage() {
       const data = await response.json()
 
       if (response.ok) {
-        // Login successful, redirect to dashboard
-        window.location.href = '/dashboard'
+        // Show success toast then redirect
+        toast({
+          title: "Success",
+          description: (
+            <div className="flex items-center gap-2 text-lg">
+              <Check className="w-8 h-8 text-green-600" />
+              <span>Logged in successfully</span>
+            </div>
+          ),
+          className: "bg-green-50 border border-green-500 text-green-800",
+        })
+        setTimeout(() => {
+          window.location.href = '/dashboard'
+        }, 900)
       } else {
         setError(data.error || 'Login failed')
       }

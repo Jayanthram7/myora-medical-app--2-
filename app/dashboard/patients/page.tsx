@@ -232,7 +232,7 @@ export default function PatientsPage() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Dr. Patient Name"
+                placeholder="Patient Name"
                 className="w-full px-4 py-2 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
               />
             </div>
@@ -243,7 +243,7 @@ export default function PatientsPage() {
                 type="number"
                 value={formData.age}
                 onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-                placeholder="45"
+                placeholder="Enter your age"
                 className="w-full px-4 py-2 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
               />
             </div>
@@ -270,7 +270,7 @@ export default function PatientsPage() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="patient@example.com"
+                placeholder="Enter your email"
                 className="w-full px-4 py-2 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
               />
             </div>
@@ -281,7 +281,7 @@ export default function PatientsPage() {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="+1-555-0000"
+                placeholder="Enter your phone number"
                 className="w-full px-4 py-2 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
               />
             </div>
@@ -372,12 +372,7 @@ export default function PatientsPage() {
           <p className="text-muted-foreground text-sm font-medium">Total Patients</p>
           <p className="text-3xl font-bold text-foreground mt-2">{patients.length}</p>
         </div>
-        <div className="bg-white rounded-xl border border-border p-6">
-          <p className="text-muted-foreground text-sm font-medium">Average Age</p>
-          <p className="text-3xl font-bold text-foreground mt-2">
-            {patients.length > 0 ? Math.round(patients.reduce((sum, p) => sum + p.age, 0) / patients.length) : 0}
-          </p>
-        </div>
+        
         <div className="bg-white rounded-xl border border-border p-6">
           <p className="text-muted-foreground text-sm font-medium">Conditions Tracked</p>
           <p className="text-3xl font-bold text-foreground mt-2">{new Set(patients.map((p) => p.condition)).size}</p>

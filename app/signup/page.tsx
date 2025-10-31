@@ -6,6 +6,7 @@ import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Check } from "lucide-react"
+import { toast } from "@/hooks/use-toast"
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -69,6 +70,16 @@ export default function SignupPage() {
       const data = await response.json()
 
       if (response.ok) {
+        toast({
+          title: "Success",
+          description: (
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-green-600" />
+              <span>Account created successfully</span>
+            </div>
+          ),
+          className: "bg-green-50 border border-green-500 text-green-800",
+        })
         setSuccess(true)
       } else {
         setError(data.error || 'Signup failed')
